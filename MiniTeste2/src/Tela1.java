@@ -1,4 +1,4 @@
-package mt2;
+
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -100,7 +100,7 @@ public class Tela1 {
 		
 		p1c.setLayout(new FlowLayout());
 		p1c.add(lb5);
-		p1c.add(lista);
+		p1c.add(new JLabel());
 		p1.add(p1c);
 		
 		fr.add(p1);
@@ -115,7 +115,7 @@ public class Tela1 {
 		p2a1.add(tx6);
 		p2a.add(p2a1);
 		
-		p2a.add(ta);
+		p2a.add(lista);
 		p2.add(BorderLayout.CENTER,p2a);
 		
 		
