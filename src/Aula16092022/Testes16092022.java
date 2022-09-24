@@ -1,6 +1,6 @@
 package Aula16092022;
 
-public class Testes {
+public class Testes16092022 {
 	
 	public static void main(String[] args) {
 		new Tela1();

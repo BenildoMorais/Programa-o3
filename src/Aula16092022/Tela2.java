@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,6 +26,9 @@ public class Tela2 implements ActionListener{
 		fr.setTitle("Teste de Atalhos");
 		fr.setLocationRelativeTo(null);
 		fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//essa tela vai ser aberta por um botao de uma outra tela na aula segunte, entao quando ela e fechada so fecha a primeira a que lhe chama se mantem aberta
+		
+		ImageIcon img = new ImageIcon("C:\\Users\\CFPE4\\Pictures\\calculadora.png"); 
+		fr.setIconImage(img.getImage());
 		
 		lb = new JLabel("Pratos Favoritos");
 		f = new Font("Arial",Font.BOLD,20);
