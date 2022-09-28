@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.KeyEvent;
 
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
@@ -35,18 +36,44 @@ public class Calculadora {
 		PDow = new JPanel();
 		
 		bt1 = new JButton("1");
+		bt1.setMnemonic(KeyEvent.VK_1);
+		
 		bt2 = new JButton("2");
+		bt2.setMnemonic(KeyEvent.VK_2);
+		
 		bt3 = new JButton("3");
+		bt3.setMnemonic(KeyEvent.VK_3);
+		
 		bt4 = new JButton("4");
+		bt4.setMnemonic(KeyEvent.VK_4);
+		
 		bt5 = new JButton("5");
+		bt5.setMnemonic(KeyEvent.VK_5);
+		
 		bt6 = new JButton("6");
+		bt6.setMnemonic(KeyEvent.VK_6);
+		
 		bt7 = new JButton("7");
+		bt7.setMnemonic(KeyEvent.VK_7);
+		
 		bt8 = new JButton("8");
+		bt8.setMnemonic(KeyEvent.VK_8);
+		
 		bt9 = new JButton("9");
+		bt9.setMnemonic(KeyEvent.VK_9);
+		
 		bt10 = new JButton("10");
+		bt10.setMnemonic(KeyEvent.VK_A);
+		
 		bt11 = new JButton("11");
+		bt11.setMnemonic(KeyEvent.VK_B);
+		
 		bt12 = new JButton("12");
+		bt12.setMnemonic(KeyEvent.VK_C);
+		
 		bt13 = new JButton("0");
+		bt13.setMnemonic(KeyEvent.VK_0);
+		
 		bt14 = new JButton(".");
 		bt15 = new JButton("C");
 		bt16 = new JButton("CE");
@@ -86,12 +113,8 @@ public class Calculadora {
 		fr.add(BorderLayout.EAST,new JLabel("  "));
 		fr.add(BorderLayout.WEST,new JLabel("  "));
 		
-		PDow.setLayout(new GridLayout(3,1));
-		PDow.add(new JLabel());
-		PDow.add(bt21);
-		PDow.add(new JLabel());
 		
-		fr.add(BorderLayout.SOUTH,PDow);
+		fr.add(BorderLayout.SOUTH,bt21);
 		
 		Pup.setLayout(new GridLayout(1,1,30,30));
 		Pup.add(tr1);
