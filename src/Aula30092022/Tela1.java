@@ -25,7 +25,7 @@ public class Tela1 extends JFrame implements ActionListener {
 	public Tela1() {
 		this.setSize(300,500);
 		this.setTitle("Menu");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setLayout(new BorderLayout());
 		
@@ -71,7 +71,7 @@ public class Tela1 extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == sair) {
-			System.exit(EXIT_ON_CLOSE);
+			System.exit(HIDE_ON_CLOSE);
 			
 		}
 		

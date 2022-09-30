@@ -1,5 +1,9 @@
 package Aula30092022;
 
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
@@ -10,7 +14,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JRadioButton;
 import javax.swing.JRadioButtonMenuItem;
 
-public class Tela2 extends JFrame{
+public class Tela2 extends JFrame implements ActionListener{
 	
 	private JMenu ficheiro, editar, proucurar, ajuda;
 	private JMenuItem abrir, fechar, gravar, gravarT, sair, copiar, colar, cortar;
@@ -18,13 +22,23 @@ public class Tela2 extends JFrame{
 	private JRadioButtonMenuItem corporativa, avancada;
 	private ButtonGroup bg;
 	private JMenuBar barra;
+	private JButton in, pe, ad;
 	
 	public Tela2() {
 		
-		this.setSize(300, 300);
+		this.setSize(400, 100);
 		this.setTitle("Tela2");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
+		
+		this.setLayout(new FlowLayout());
+		
+		in = new JButton("Introduzir");
+		in.setVisible(false);
+		pe = new JButton("Pesquisar");
+		pe.setVisible(false);
+		ad = new JButton("Administracao");
+		ad.setVisible(false);
 		
 		ficheiro = new JMenu("Ficheiro");
 		editar = new JMenu("editar");
@@ -41,11 +55,14 @@ public class Tela2 extends JFrame{
 		cortar = new JMenuItem("cortar");
 		
 		abrirTela = new JCheckBoxMenuItem("AbrirTela");
+		abrirTela.addActionListener(this);
 		
 		bg = new ButtonGroup ();
 		corporativa = new JRadioButtonMenuItem ("Corporativa");
+		corporativa.addActionListener(this);
 		corporativa.setSelected(true);
 		avancada = new JRadioButtonMenuItem("Avancada");
+		avancada.addActionListener(this);
 		bg.add(corporativa);
 		bg.add(avancada);
 		
@@ -74,8 +91,31 @@ public class Tela2 extends JFrame{
 		barra.add(ajuda);
 		this.setJMenuBar(barra);
 		
+		this.add(in);
+		this.add(pe);
+		this.add(ad);
+		
 		
 		this.setVisible(true);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == abrirTela) {
+			new Tela1();
+		}
+		if(e.getSource() == corporativa) {
+			in.setVisible(true);
+			pe.setVisible(true);
+			ad.setVisible(false);
+		}
+		if(e.getSource() == avancada) {
+			ad.setVisible(true);
+			in.setVisible(true);
+			pe.setVisible(true);
+			
+		}
 		
 	}
 
