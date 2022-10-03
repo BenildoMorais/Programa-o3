@@ -50,6 +50,7 @@ public class Tela2 extends JFrame implements ActionListener{
 		gravar = new JMenuItem("gravar");
 		gravarT = new JMenuItem("gravarT");
 		sair = new JMenuItem("sair");
+		sair.addActionListener(this);
 		copiar = new JMenuItem("copiar");
 		colar = new JMenuItem("colar");
 		cortar = new JMenuItem("cortar");
@@ -115,6 +116,9 @@ public class Tela2 extends JFrame implements ActionListener{
 			in.setVisible(true);
 			pe.setVisible(true);
 			
+		}
+		if(e.getSource() == sair) {
+			System.exit(EXIT_ON_CLOSE);
 		}
 		
 	}
