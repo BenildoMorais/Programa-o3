@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -15,6 +16,7 @@ public class Tela2 extends JFrame implements ActionListener {
 	 private JMenuItem dt,reg,lista,sair;
 	 private JMenuBar barra;
 	 private JSeparator sep;
+	 private Tela3 registro;
 	 
 	 Tela2(){
 		 super("Tela Principal");
@@ -27,11 +29,11 @@ public class Tela2 extends JFrame implements ActionListener {
 	private void addc() {
 		
 		sistema.add(dt);
-		sistema.add(sep);
+		sistema.add(new JSeparator());
 		sistema.add(reg);
-		sistema.add(sep);
+		sistema.add(new JSeparator());
 		sistema.add(lista);	
-		sistema.add(sep);
+		sistema.add(new JSeparator());
 		sistema.add(sair);
 		barra.add(sistema);
 		setJMenuBar(barra);
@@ -52,6 +54,7 @@ public class Tela2 extends JFrame implements ActionListener {
 		reg= new JMenuItem("Registro de Produtos",'R');
 		reg.addActionListener(this);
 		lista= new JMenuItem("Lista de Produtos",'L');
+		lista.addActionListener(this);
 		sair= new JMenuItem("Sair",'S');
 		sair.addActionListener(this);
 		barra= new JMenuBar();
@@ -65,10 +68,14 @@ public class Tela2 extends JFrame implements ActionListener {
 			System.exit(0);
 		}
 		if(e.getSource() == reg) {
-			new Tela3();
+			registro = new Tela3();
+			
 		}
 		if(e.getSource() == dt) {
 			JOptionPane.showMessageDialog(null, "Feito por Catia e Benildo\nDia 03 de Outubro");
+		}
+		if(e.getSource() == lista) {
+			new Tela4(registro.getLista());
 		}
 		
 		
