@@ -2,7 +2,7 @@
 public class Teste {
 	
 	public static void main(String[] args) {
-		new Calculadora();
-		
+		//new Calculadora();
+		new refazendoEx3();
 	}
 }

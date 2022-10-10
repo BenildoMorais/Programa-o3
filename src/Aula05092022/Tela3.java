@@ -54,6 +54,7 @@ public class Tela3 {
 		fr.add(new JLabel());
 		fr.add(new JLabel());
 	
+		
 		fr.setVisible(true);
 	}
 	
