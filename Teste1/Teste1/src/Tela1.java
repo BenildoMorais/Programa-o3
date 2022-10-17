@@ -1,0 +1,63 @@
+//Benildo Renaldo Morais Augusto
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
+public class Tela1 extends JFrame implements ActionListener{
+	
+	private JMenu menu;
+	private JMenuBar barra;
+	private JMenuItem parcelas, dados, sair;
+	
+	public Tela1() {
+		this.setTitle("Tela Principal");
+		this.setSize(400,100);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		
+		parcelas = new JMenuItem("Calculo de Parcelas",'C');
+		parcelas.addActionListener(this);
+		dados = new JMenuItem("Dados do Programador",'D');
+		dados.addActionListener(this);
+		sair = new JMenuItem("Sair",'S');
+		sair.addActionListener(this);
+		
+		menu = new JMenu("Menu");
+		menu.add(parcelas);
+		menu.add(dados);
+		menu.addSeparator();
+		menu.add(sair);
+		
+		barra = new JMenuBar();
+		
+		barra.add(menu);
+		
+		this.setJMenuBar(barra);
+		
+		this.setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == parcelas) {
+			new Tela2();
+		}
+		if(e.getSource() == dados) {
+			JOptionPane.showMessageDialog(null,"Benildo Renaldo Morais Augusto\nLECC21");
+		}
+		if(e.getSource() == sair) {
+			System.exit(0);
+		}
+		
+		
+	}
+
+	
+	
+}

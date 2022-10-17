@@ -1,0 +1,48 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class Tela1 extends JFrame implements ActionListener{
+	
+	private JMenu menu;
+	private JMenuBar barra;
+	private JMenuItem parcelas, dados, sair;
+	
+	public Tela1() {
+		this.setTitle("Tela Principal");
+		this.setSize(400,100);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		
+		parcelas = new JMenuItem("Calculo de Parcelas",'C');
+		dados = new JMenuItem("Dados do Programador",'D');
+		sair = new JMenuItem("Sair",'S');
+		
+		menu = new JMenu("Menu");
+		menu.add(parcelas);
+		menu.add(dados);
+		menu.addSeparator();
+		menu.add(sair);
+		
+		barra = new JMenuBar();
+		
+		barra.add(menu);
+		
+		this.setJMenuBar(barra);
+		
+		this.setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		
+	}
+
+	
+	
+}
